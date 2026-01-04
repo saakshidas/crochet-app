@@ -1,1 +1,183 @@
-<p>admin works!</p>
+<!-- Navbar -->
+<nav class="navbar">
+    <div class="container nav-content">
+        <div class="logo">
+            <span class="icon">🧶</span>
+            <span class="text">Crochet Haven</span>
+        </div>
+        <div class="nav-links">
+            @for (item of menuItems; track item) {
+            <a href="#" class="nav-link">{{ item }}</a>
+            }
+        </div>
+        <button class="btn btn-primary">Shop Now</button>
+    </div>
+</nav>
+
+<!-- Hero Section -->
+<header class="hero">
+    <div class="container hero-content">
+        <div class="hero-text">
+            <span class="badge">New App Available</span>
+            <h1>Handcrafted <span class="highlight">Happiness</span>,<br> Delivered to You.</h1>
+            <p>Discover unique crochet patterns, premium yarns, and finished goods. Order seamlessly from our new app or
+                browse the web store today.</p>
+            <div class="hero-actions">
+                <button class="btn btn-primary icon-btn">
+                    🛍️ Shop Web Store
+                </button>
+                <button class="btn btn-outline icon-btn">
+                    ⬇️ Download App
+                </button>
+            </div>
+            <div class="hero-social">
+                <div class="avatars">
+                    <span>👩</span><span>👨</span><span>👩‍🦰</span>
+                </div>
+                <span class="social-text">Join 10,000+ crafters today</span>
+            </div>
+        </div>
+        <div class="hero-image-wrapper">
+            <img src="/images/hero.png" alt="Cozy Crochet Setup" class="hero-img">
+            <div class="hero-overlay-card">
+                <strong>Winter Collection</strong>
+                <span>Now Available</span>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Features Section -->
+<section class="section features">
+    <div class="container">
+        <div class="section-header center">
+            <h2>Why Crochet Haven?</h2>
+            <p>We bring the authentic yarn store experience to your digital fingertips with features designed for
+                creators.</p>
+        </div>
+        <div class="grid-3">
+            @for (feature of features; track feature.title) {
+            <div class="feature-card">
+                <div class="feature-icon">{{ feature.icon }}</div>
+                <h3>{{ feature.title }}</h3>
+                <p>{{ feature.description }}</p>
+            </div>
+            }
+        </div>
+    </div>
+</section>
+
+<!-- Trending Section -->
+<section class="section trending">
+    <div class="container">
+        <div class="section-header flex-header">
+            <div class="header-left">
+                <h2>Trending This Week</h2>
+                <p>Community favorites and new arrivals</p>
+            </div>
+            <a href="#" class="view-all">View All →</a>
+        </div>
+        <div class="grid-4">
+            @for (product of products; track product.name) {
+            <div class="product-card">
+                <div class="product-img-box">
+                    <button class="favorite-btn">❤</button>
+                    <img [src]="product.image" [alt]="product.name">
+                </div>
+                <div class="product-details">
+                    <h3>{{ product.name }}</h3>
+                    <div class="product-meta">
+                        <span class="type">{{ product.type }}</span>
+                        <span class="price">\${{ product.price }}</span>
+                    </div>
+                </div>
+            </div>
+            }
+        </div>
+    </div>
+</section>
+
+<!-- Testimonials Section -->
+<section class="section testimonials">
+    <div class="container">
+        <div class="section-header center">
+            <h2>Loved by Crafters</h2>
+        </div>
+        <div class="grid-3">
+            @for (testimonial of testimonials; track testimonial.name) {
+            <div class="testimonial-card">
+                <div class="t-header">
+                    <div class="t-avatar">{{ testimonial.avatar }}</div>
+                    <div class="t-info">
+                        <strong>{{ testimonial.name }}</strong>
+                        <span>{{ testimonial.role }}</span>
+                    </div>
+                </div>
+                <div class="t-rating">⭐⭐⭐⭐⭐</div>
+                <p class="t-text">{{ testimonial.text }}</p>
+            </div>
+            }
+        </div>
+    </div>
+</section>
+
+<!-- Footer CTA -->
+<section class="cta-footer">
+    <div class="container cta-content">
+        <h2>Start Your Next Project Today</h2>
+        <p>Join our community of makers. Download the app for exclusive mobile-only deals.</p>
+        <div class="app-buttons">
+            <button class="app-btn black">
+                <span></span>
+                <div class="btn-text">
+                    <small>Download on the</small>
+                    <strong>App Store</strong>
+                </div>
+            </button>
+            <button class="app-btn black">
+                <span>▶</span>
+                <div class="btn-text">
+                    <small>GET IT ON</small>
+                    <strong>Google Play</strong>
+                </div>
+            </button>
+        </div>
+    </div>
+</section>
+
+<!-- Simple Footer Links -->
+<footer class="main-footer">
+    <div class="container footer-grid">
+        <div class="footer-brand">
+            <strong>🧶 Crochet Haven</strong>
+            <p>Crafting happiness one stitch at a time. Join us and create something beautiful.</p>
+        </div>
+        <div class="footer-col">
+            <strong>Shop</strong>
+            <a href="#">Yarns</a>
+            <a href="#">Patterns</a>
+            <a href="#">Kits</a>
+        </div>
+        <div class="footer-col">
+            <strong>Company</strong>
+            <a href="#">About Us</a>
+            <a href="#">Sustainability</a>
+
+        </div>
+        <div class="footer-col">
+            <strong>Stay Connected</strong>
+            <div class="social-icons">
+                <a href="#">📷</a>
+                <a href="#">🐦</a>
+                <a href="#">👍</a>
+            </div>
+        </div>
+    </div>
+    <div class="container footer-bottom">
+        <small>© 2026 Crochet Haven. All rights reserved.</small>
+        <div class="legal">
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms of Service</a>
+        </div>
+    </div>
+</footer>
