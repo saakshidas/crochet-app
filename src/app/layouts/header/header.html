@@ -1,1 +1,19 @@
-<p>header works!</p>
+<nav class="navbar">
+    <div class="container nav-content">
+        <div class="logo">
+            <span class="icon">
+                <img src="/images/logo.svg" class="logo-img" alt="BeautyKnotCrafts logo">
+            </span>
+
+            <span class="logo-text text-muted">Beauty Knot Crafts</span>
+        </div>
+        <div class="nav-links">
+            @for (item of menuItems; track item) {
+            <a class="nav-link" [routerLink]="item.path" routerLinkActive="active">
+                {{ item.label }}
+            </a>
+            }
+        </div>
+        <button class="btn btn-primary">Shop Now</button>
+    </div>
+</nav>
