@@ -1,0 +1,42 @@
+<section class="about-section">
+    <div class="about-container">
+        <div class="visual-side">
+            <div class="image-wrapper">
+                <div class="glow-effect"></div>
+                <img src="/images/yarn.png" alt="Craftsmanship" class="about-img">
+
+                <div class="stat-card animate-float">
+                    <p class="stat-number">100%</p>
+                    <p class="stat-label">Handmade with Love</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-side">
+            <div class="text-group">
+                <h2 class="title">Made with Love, <br><span>Stitch by Stitch</span></h2>
+                <p class="description">
+                    Every piece at Beauty Knot Crafts is handcrafted with care and passion.
+                    We believe in the beauty of slow fashion and the magic of handmade goods.
+                </p>
+            </div>
+
+            <ul class="points-list">
+                @for (point of points; track point) {
+                <li class="point-item">
+                    <span class="check-icon">
+                        <svg fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd"
+                                d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                clip-rule="evenodd"></path>
+                        </svg>
+                    </span>
+                    <span class="point-text">{{ point }}</span>
+                </li>
+                }
+            </ul>
+
+            <button class="story-btn">Our Story →</button>
+        </div>
+    </div>
+</section>

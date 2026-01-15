@@ -1,0 +1,20 @@
+<section class="categories-section">
+    <div class="categories-container">
+        <div class="section-header">
+            <h2 class="title">Shop by <span>Category</span></h2>
+            <p class="subtitle">Explore our handcrafted collections, each piece made with love and attention to detail.
+            </p>
+        </div>
+
+        <div class="categories-grid">
+            @for (category of categories; track category.name) {
+            <div class="category-card">
+                <div class="icon-wrapper">
+                    <span class="icon">{{ category.icon }}</span>
+                </div>
+                <p class="category-name">{{ category.name }}</p>
+            </div>
+            }
+        </div>
+    </div>
+</section>

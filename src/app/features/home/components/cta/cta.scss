@@ -1,0 +1,116 @@
+.cta-section {
+    padding: 6rem 0 10rem;
+}
+
+.cta-container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.cta-card {
+    position: relative;
+    background: var(--primary);
+    border-radius: 4rem;
+    padding: 6rem 4rem;
+    overflow: hidden;
+    text-align: center;
+    color: white;
+    box-shadow: 0 40px 80px -20px rgba(109, 76, 65, 0.4);
+
+    @media (max-width: 768px) {
+        padding: 4rem 2rem;
+        border-radius: 3rem;
+    }
+}
+
+.cta-content {
+    position: relative;
+    z-index: 10;
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.cta-title {
+    font-size: 4rem;
+    font-weight: 800;
+    line-height: 1.1;
+    margin: 0;
+
+    @media (max-width: 1024px) {
+        font-size: 3rem;
+    }
+}
+
+.cta-subtitle {
+    font-size: 1.25rem;
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 1.6;
+    margin: 0;
+}
+
+.cta-actions {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.25rem;
+    margin-top: 1rem;
+
+    .cta-btn {
+        background: white;
+        color: var(--primary);
+        padding: 1.25rem 3.5rem;
+        border-radius: 99px;
+        border: none;
+        font-size: 1.25rem;
+        font-weight: 800;
+        cursor: pointer;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+
+        &:hover {
+            background: var(--peach);
+            transform: scale(1.05) translateY(-2px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        &:active {
+            transform: scale(0.98);
+        }
+    }
+
+    .cta-hint {
+        font-size: 0.9rem;
+        font-weight: 500;
+        color: rgba(255, 255, 255, 0.6);
+        margin: 0;
+    }
+}
+
+// Decorative Glows
+.glow-top {
+    position: absolute;
+    top: -20%;
+    right: -10%;
+    width: 500px;
+    height: 500px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    filter: blur(80px);
+    pointer-events: none;
+}
+
+.glow-bottom {
+    position: absolute;
+    bottom: -20%;
+    left: -10%;
+    width: 400px;
+    height: 400px;
+    background: rgba(255, 138, 101, 0.2);
+    border-radius: 50%;
+    filter: blur(80px);
+    pointer-events: none;
+}

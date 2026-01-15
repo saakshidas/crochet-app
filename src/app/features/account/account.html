@@ -1,1 +1,69 @@
-<p>account works!</p>
+<div class="account-page dot-pattern">
+    <div class="account-container">
+        <!-- Sidebar -->
+        <aside class="account-sidebar">
+            <div class="profile-card animate-fade-in">
+                <div class="avatar">{{ user.avatar }}</div>
+                <div class="info">
+                    <h2 class="name">{{ user.name }}</h2>
+                    <p class="email">{{ user.email }}</p>
+                </div>
+            </div>
+
+            <nav class="side-nav">
+                @for (item of menuItems; track item.label) {
+                <a href="javascript:void(0)" class="nav-link" [class.active]="item.active">
+                    <span class="icon">{{ item.icon }}</span>
+                    <span class="label">{{ item.label }}</span>
+                </a>
+                }
+            </nav>
+
+            <button class="logout-btn">Log Out</button>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="account-main animate-slide-up">
+            <header class="content-header">
+                <h1 class="title">My <span>Orders</span></h1>
+                <p class="subtitle">Manage your recent orders and track their delivery status.</p>
+            </header>
+
+            <div class="orders-list">
+                @for (order of orders; track order.id) {
+                <div class="order-card">
+                    <div class="order-header">
+                        <div class="order-info">
+                            <span class="id">{{ order.id }}</span>
+                            <span class="date">{{ order.date }}</span>
+                        </div>
+                        <div class="status-badge" [attr.data-status]="order.status">
+                            {{ order.status }}
+                        </div>
+                    </div>
+
+                    <div class="order-body">
+                        <div class="items">
+                            <p class="items-label">Items</p>
+                            <p class="items-value">{{ order.items.join(', ') }}</p>
+                        </div>
+                        <div class="total">
+                            <p class="total-label">Total Amount</p>
+                            <p class="total-value">{{ order.total | currency:'INR' }}</p>
+                        </div>
+                    </div>
+
+                    <div class="order-footer">
+                        <button class="action-btn outline">Track Order</button>
+                        <button class="action-btn">Reorder</button>
+                    </div>
+                </div>
+                }
+            </div>
+
+            <div class="no-more-orders">
+                <p>Showing last 3 months of orders</p>
+            </div>
+        </main>
+    </div>
+</div>

@@ -1,0 +1,295 @@
+.account-page {
+    min-height: 100vh;
+    padding: 8rem 0 6rem;
+}
+
+.account-container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: grid;
+    grid-template-columns: 320px 1fr;
+    gap: 3rem;
+    align-items: start;
+
+    @media (max-width: 1024px) {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+}
+
+// Sidebar Design
+.account-sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.profile-card {
+    background: white;
+    padding: 2rem;
+    border-radius: var(--radius-lg);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1.25rem;
+    box-shadow: var(--shadow-subtle);
+    border: 1px solid #f1f5f9;
+
+    .avatar {
+        width: 80px;
+        height: 80px;
+        background: var(--primary);
+        color: white;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 2rem;
+        font-weight: 700;
+        box-shadow: 0 10px 20px -5px rgba(109, 76, 65, 0.4);
+    }
+
+    .info {
+        .name {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: #1e293b;
+            margin: 0;
+        }
+
+        .email {
+            font-size: 0.9rem;
+            color: #64748b;
+            margin: 0.25rem 0 0;
+        }
+    }
+}
+
+.side-nav {
+    background: white;
+    padding: 1rem;
+    border-radius: var(--radius-lg);
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    box-shadow: var(--shadow-subtle);
+    border: 1px solid #f1f5f9;
+
+    .nav-link {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        padding: 1rem;
+        border-radius: 12px;
+        text-decoration: none;
+        color: #64748b;
+        font-weight: 600;
+        transition: all 0.3s ease;
+
+        .icon {
+            font-size: 1.25rem;
+        }
+
+        &:hover {
+            background: #f8fafc;
+            color: var(--primary);
+        }
+
+        &.active {
+            background: var(--peach);
+            color: var(--primary);
+        }
+    }
+}
+
+.logout-btn {
+    background: transparent;
+    color: #ef4444;
+    border: 1px solid rgba(239, 68, 68, 0.1);
+    padding: 1rem;
+    border-radius: var(--radius-lg);
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+    &:hover {
+        background: #fef2f2;
+        border-color: #ef4444;
+    }
+}
+
+// Main Content Design
+.account-main {
+    background: white;
+    padding: 3rem;
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-subtle);
+    border: 1px solid #f1f5f9;
+
+    @media (max-width: 768px) {
+        padding: 1.5rem;
+    }
+}
+
+.content-header {
+    margin-bottom: 3rem;
+
+    .title {
+        font-size: 2.5rem;
+        font-weight: 800;
+        color: #1e293b;
+        margin-bottom: 0.5rem;
+
+        span {
+            color: var(--primary);
+        }
+    }
+
+    .subtitle {
+        color: #64748b;
+        font-size: 1.05rem;
+    }
+}
+
+.orders-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.order-card {
+    border: 1px solid #f1f5f9;
+    border-radius: var(--radius-lg);
+    padding: 2rem;
+    transition: all 0.3s ease;
+
+    &:hover {
+        border-color: rgba(109, 76, 65, 0.2);
+        box-shadow: 0 10px 30px -10px rgba(109, 76, 65, 0.05);
+    }
+
+    .order-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 1.5rem;
+
+        .order-info {
+            display: flex;
+            flex-direction: column;
+
+            .id {
+                font-weight: 800;
+                color: #1e293b;
+                font-size: 1.1rem;
+            }
+
+            .date {
+                font-size: 0.9rem;
+                color: #94a3b8;
+            }
+        }
+
+        .status-badge {
+            padding: 0.5rem 1rem;
+            border-radius: 99px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+
+            &[data-status="Delivered"] {
+                background: #dcfce7;
+                color: #166534;
+            }
+
+            &[data-status="Processing"] {
+                background: #fef9c3;
+                color: #854d0e;
+            }
+
+            &[data-status="Shipped"] {
+                background: #dbeafe;
+                color: #1e40af;
+            }
+        }
+    }
+
+    .order-body {
+        display: flex;
+        gap: 3rem;
+        padding-bottom: 1.5rem;
+        border-bottom: 1px solid #f8fafc;
+        margin-bottom: 1.5rem;
+
+        @media (max-width: 640px) {
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .items-label,
+        .total-label {
+            font-size: 0.8rem;
+            color: #94a3b8;
+            font-weight: 600;
+            text-transform: uppercase;
+            margin-bottom: 0.25rem;
+        }
+
+        .items-value,
+        .total-value {
+            font-weight: 700;
+            color: #475569;
+            margin: 0;
+        }
+
+        .total-value {
+            color: var(--primary);
+            font-size: 1.1rem;
+        }
+    }
+
+    .order-footer {
+        display: flex;
+        gap: 1rem;
+        justify-content: flex-end;
+
+        .action-btn {
+            padding: 0.75rem 1.5rem;
+            border-radius: 12px;
+            font-weight: 700;
+            font-size: 0.9rem;
+            cursor: pointer;
+            border: none;
+            background: var(--primary);
+            color: white;
+            transition: all 0.3s ease;
+
+            &.outline {
+                background: transparent;
+                border: 1px solid rgba(109, 76, 65, 0.2);
+                color: var(--primary);
+
+                &:hover {
+                    background: #f8fafc;
+                    border-color: var(--primary);
+                }
+            }
+
+            &:hover:not(.outline) {
+                background: var(--primary-hover);
+                transform: translateY(-2px);
+            }
+        }
+    }
+}
+
+.no-more-orders {
+    text-align: center;
+    margin-top: 3rem;
+    color: #94a3b8;
+    font-size: 0.9rem;
+    font-style: italic;
+}

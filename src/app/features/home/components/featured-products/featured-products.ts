@@ -1,15 +1,17 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ProductCard } from '../../shared/components/product-card/product-card';
+import { ProductCard } from '../../../../shared/components/product-card/product-card';
 
 @Component({
-  selector: 'app-shop',
+  selector: 'app-featured-products',
   standalone: true,
   imports: [CommonModule, ProductCard],
-  templateUrl: './shop.html',
-  styleUrl: './shop.scss',
+  templateUrl: './featured-products.html',
+  styleUrl: './featured-products.scss'
 })
-export class Shop {
+export class FeaturedProductsComponent {
+  whatsappNumber = '919902458487';
+
   products = [
     {
       id: 1,
@@ -17,7 +19,7 @@ export class Shop {
       description: 'A spacious hand-crocheted bag, perfect for farmers markets and beach days.',
       price: 1850.00,
       image: '/images/tote.png',
-      badge: 'Bestseller'
+      badge: 'Featured'
     },
     {
       id: 2,
@@ -25,7 +27,7 @@ export class Shop {
       description: 'Soft and warm crochet in beautiful boho tones. Perfect for snuggling on the couch.',
       price: 3499.00,
       image: '/images/blanket.png',
-      badge: 'Premium'
+      badge: 'Product'
     },
     {
       id: 3,
@@ -33,7 +35,7 @@ export class Shop {
       description: 'Adorable security blanket with a sweet bunny head. Safe for newborns and toddlers.',
       price: 850.00,
       image: '/images/hero.png',
-      badge: 'New'
+      badge: 'Newborn'
     },
     {
       id: 4,
@@ -41,29 +43,13 @@ export class Shop {
       description: 'Classic cuddly bear companion made with premium acrylic yarn. Safety eyes included.',
       price: 1200.00,
       image: '/images/hero.png',
-      badge: 'Popular'
-    },
-    {
-      id: 5,
-      name: 'Cotton Yarn Bundle',
-      description: 'Set of 5 premium cotton yarn skeins in pastel shades. Perfect for summer projects.',
-      price: 950.00,
-      image: '/images/yarn.png',
-      badge: 'Supply'
-    },
-    {
-      id: 6,
-      name: 'Crochet Hook Set',
-      description: 'Ergonomic handle crochet hooks in sizes 2.0mm to 10.0mm. Case included.',
-      price: 650.00,
-      image: '/images/hooks.png',
-      badge: 'Tools'
+      badge: 'Toy'
     }
   ];
 
   orderOnWhatsApp(product: any) {
     const message = `Hello Beauty Knot Crafts! I would like to order: ${product.name} (INR ${product.price})`;
-    const url = `https://wa.me/8147161665?text=${encodeURIComponent(message)}`;
+    const url = `https://wa.me/${this.whatsappNumber}?text=${encodeURIComponent(message)}`;
     window.open(url, '_blank');
   }
 }

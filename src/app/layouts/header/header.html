@@ -1,19 +1,41 @@
+<!-- Redesigned Navbar matching reference screenshot -->
 <nav class="navbar">
-    <div class="container nav-content">
-        <div class="logo">
-            <span class="icon">
-                <img src="/images/logo.svg" class="logo-img" alt="BeautyKnotCrafts logo">
-            </span>
+    <div class="navbar-container">
 
-            <span class="logo-text text-muted">Beauty Knot Crafts</span>
-        </div>
-        <div class="nav-links">
-            @for (item of menuItems; track item) {
-            <a class="nav-link" [routerLink]="item.path" routerLinkActive="active">
-                {{ item.label }}
+        <!-- Logo -->
+        <a routerLink="/" class="logo-wrap">
+            <div class="logo-circle">B</div>
+            <div class="logo-text">
+                <span class="logo-title">Beauty Knot</span>
+                <span class="logo-sub">CRAFTS</span>
+            </div>
+        </a>
+
+        <!-- Navigation -->
+        <ul class="nav-links">
+            <li><a routerLink="/" routerLinkActive="active">Home</a></li>
+            <li><a routerLink="/shop">Shop</a></li>
+            <li><a routerLink="/categories">Categories</a></li>
+            <li><a routerLink="/about">About</a></li>
+            <li><a routerLink="/contact">Contact</a></li>
+        </ul>
+
+        <!-- Actions -->
+        <div class="nav-actions">
+            <button class="icon-btn" aria-label="Search">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="11" cy="11" r="8" />
+                    <line x1="21" y1="21" x2="16.65" y2="16.65" />
+                </svg>
+            </button>
+
+            <a class="order-btn">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M16 11V7a4 4 0 00-8 0v4" />
+                    <path d="M5 9h14l1 12H4L5 9z" />
+                </svg>
+                Order Now
             </a>
-            }
         </div>
-        <button class="btn btn-primary">Shop Now</button>
     </div>
 </nav>

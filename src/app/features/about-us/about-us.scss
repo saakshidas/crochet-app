@@ -1,0 +1,153 @@
+.about {
+    background: #faf7f2;
+    padding: 80px 20px;
+}
+
+.about-wrapper {
+    max-width: 1200px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.about-visual {
+    position: relative;
+}
+
+.card {
+    border-radius: 20px;
+    overflow: hidden;
+    background: #fff;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, .08);
+}
+
+.card-top {
+    width: 280px;
+}
+
+.card-bottom {
+    width: 320px;
+    position: absolute;
+    top: 120px;
+    left: 120px;
+}
+
+.card img {
+    width: 100%;
+    display: block
+}
+
+.about-title {
+    font-size: 42px;
+    line-height: 1.2;
+    color: #2f2f2f;
+}
+
+.about-title span {
+    color: #c08457;
+    font-family: serif;
+    font-style: italic;
+}
+
+.about-text {
+    margin: 24px 0;
+    color: #6b7280;
+    line-height: 1.8;
+}
+
+.about-points {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 30px;
+}
+
+.about-points li {
+    margin-bottom: 12px;
+    padding-left: 24px;
+    position: relative;
+}
+
+.about-points li::before {
+    content: '✓';
+    color: #c08457;
+    position: absolute;
+    left: 0;
+}
+
+.about-cta {
+    display: inline-block;
+    padding: 14px 28px;
+    border-radius: 999px;
+    background: #c08457;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+/* CTA */
+.cta {
+    padding: 100px 20px;
+}
+
+.cta-box {
+    max-width: 900px;
+    margin: auto;
+    background: #c08457;
+    color: #fff;
+    border-radius: 24px;
+    padding: 60px 40px;
+    text-align: center;
+}
+
+.cta-box h3 {
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+.cta-box p {
+    opacity: .9;
+    margin-bottom: 30px;
+}
+
+.cta-form {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+}
+
+.cta-form input {
+    padding: 14px 20px;
+    border-radius: 999px;
+    border: none;
+    width: 260px;
+}
+
+.cta-form button {
+    padding: 14px 28px;
+    border-radius: 999px;
+    border: none;
+    background: #fff;
+    color: #c08457;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+@media(max-width:900px) {
+    .about-wrapper {
+        grid-template-columns: 1fr
+    }
+
+    .about-visual {
+        height: 420px
+    }
+
+    .card-bottom {
+        left: 60px
+    }
+
+    .cta-form {
+        flex-direction: column
+    }
+}

@@ -1,0 +1,68 @@
+.featured-section {
+    padding: 6rem 0;
+    background: white;
+}
+
+.featured-container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.section-header {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    margin-bottom: 4rem;
+    gap: 2rem;
+
+    @media (max-width: 768px) {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+.title-group {
+    .title {
+        font-size: 3rem;
+        font-weight: 800;
+        color: #1e293b;
+        margin-bottom: 0.5rem;
+        line-height: 1.1;
+
+        span {
+            color: var(--primary);
+        }
+    }
+
+    .subtitle {
+        font-size: 1.1rem;
+        color: #64748b;
+        margin: 0;
+    }
+}
+
+.view-all-btn {
+    background: transparent;
+    color: var(--primary);
+    border: none;
+    font-weight: 700;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    cursor: pointer;
+    padding: 0;
+    transition: gap 0.3s ease;
+
+    &:hover {
+        gap: 1.25rem;
+        color: var(--primary-hover);
+    }
+}
+
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 2.5rem;
+}
